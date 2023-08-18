@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            background-image: url('bg.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .item {
+            background-color: #333;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 10px 4px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.5s;
+            transform-style: initial;
+            backface-visibility: hidden;
+        }
+
+        .item img {
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+
+        .label {
+            margin-top: 10px;
+            font-weight: bold;
+            display: block;
+        }
+
+        .name {
+            color: #fff;
+            font-size: 30px;
+        }
+
+        .liga {
+            color: #f7bf0a;
+            font-size: 20px;
+        }
+
+        .categories {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .category {
+            padding: 25px;
+            margin: 0 10px;
+            font-weight: bold;
+            color: #fff;
+            font-size: 40px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            font-weight: Bold;
+            font-size: 100px;
+        }
+
+        .ligastars {
+            margin-top: 5px;
+            color: gold;
+        }
+
+        .member-list {
+            position: absolute;
+            border-radius: 5px;
+            padding: 10px;
+            top: 0;
+            box-shadow: 0 10px 4px rgba(255, 255, 255, 0.8);
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            align-items: center;
+            padding: 20px;
+            transform: rotateY(180.5deg) translateZ(1px);
+        }
+
+        .item.flip {
+            transform: rotateY(180.5deg) translateZ(1px);
+            pointer-events: none;
+        }
+
+        .item.flip .label {
+            display: none;
+        }
+
+        .item.flip .member-list {
+            display: flex;
+        }
+
+        .leader {
+            color: #1F4068;
+            font-size: 30px;
+            padding-top: 20px;
+            padding: 15px;
+        }
+
+        .member {
+            color: #00A896;
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        .sec-member {
+            color: #FFC300;
+            padding: 15px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        TEAMS
+    </div>
+    <div class="categories">
+        <div class="category">Solo
+            <div class="container">
+                <div class="item">
+                    <img src="TEAMCraft.png" alt="TEAMCraftFC" draggable="false">
+                    <div class="label">
+                        <div class="name">TEAMCraftFC</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">★☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="TEAMCraft.png" alt="TEAMCraftFC" draggable="false">
+                        <div class="leader">
+                            Dev_LEMCraft
+                        </div>
+                        <div class="member">
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="KinrensFC.png" alt="KinrensFC" draggable="false">
+                    <div class="label">
+                        <div class="name">KinrensFC</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="KinrensFC.png" alt="Kinren10" draggable="false">
+                        <div class="leader">
+                            Kinren10
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="Palmbeach-Beavers.png" alt="Palmbeach-Beavers" draggable="false">
+                    <div class="label">
+                        <div class="name">Palmbeach-Beavers</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="Palmbeach-Beavers.png" alt="Palmbeach-Beavers" draggable="false">
+                        <div class="leader">
+                            Lutiiiii
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="WSV1898_Wolfshainer_Sport_Verein_1898.png" alt="WSV1898_Wolfshainer_Sport_Verein_1898"
+                        draggable="false">
+                    <div class="label">
+                        <div class="name">WSV1898 Wolfshainer Sport Verein 1898</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="WSV1898_Wolfshainer_Sport_Verein_1898.png" alt="WSV1898_Wolfshainer_Sport_Verein_1898"
+                            draggable="false">
+                        <div class="leader">
+                            pinopeltzi
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="FCSpezi.png" alt="FCSpezi" draggable="false">
+                    <div class="label">
+                        <div class="name">FCSpezi</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="FCSpezi.png" alt="FCSpezi" draggable="false">
+                        <div class="leader">
+                            TwitchBinmxrion
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="BlocksRedstone.png" alt="BlocksRedstone" draggable="false">
+                    <div class="label">
+                        <div class="name">BlocksRedstone</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="BlocksRedstone.png" alt="BlocksRedstone" draggable="false">
+                        <div class="leader">
+                            Block_MrTii
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="SleeperMC.png" alt="SleeperMC" draggable="false">
+                    <div class="label">
+                        <div class="name">SleeperMC</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="SleeperMC.png" alt="SleeperMC" draggable="false">
+                        <div class="leader">
+                            dustin_pennt
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="BC Juleis.png" alt="BC Juleies" draggable="false">
+                    <div class="label">
+                        <div class="name">BC Juleies</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="BC Juleis.png" alt="BC Juleies" draggable="false">
+                        <div class="leader">
+                            Juleies
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="FC Creepers.png" alt="FC Creepers" draggable="false">
+                    <div class="label">
+                        <div class="name">FC Creepers</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="FC Creepers.png" alt="FC Creepers" draggable="false">
+                        <div class="leader">
+                            luckyzombie12
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="Nightmare.png" alt="Nightmare" draggable="false">
+                    <div class="label">
+                        <div class="name">Nightmare</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="Nightmare.png" alt="Nightmare" draggable="false">
+                        <div class="leader">
+                            TRyFlow
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="TheShadow.png" alt="TheShadow" draggable="false">
+                    <div class="label">
+                        <div class="name">TheShadow</div>
+                        <div class="liga">Solo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="TheShadow.png" alt="TheShadow" draggable="false">
+                        <div class="leader">
+                            shadow0358
+                        </div>
+                        <div class="member">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="category">Duo
+            <div class="container">
+                <div class="item">
+                    <img src="CloudMC.png" alt="Cloud-MC" draggable="false">
+                    <div class="label">
+                        <div class="name">Cloud-MC</div>
+                        <div class="liga">Duo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="CloudMC.png" alt="Cloud-MC" draggable="false">
+                        <div class="leader">
+                            Dev_LEMCraft
+                        </div>
+                        <div class="member">
+                            NotSaunja
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="Nightmare.png" alt="Nightmare" draggable="false">
+                    <div class="label">
+                        <div class="name">Nightmare</div>
+                        <div class="liga">Duo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="Nightmare.png" alt="Nightmare" draggable="false">
+                        <div class="leader">
+                            TRyFlow
+                        </div>
+                        <div class="member">
+                            TRyLuca
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="BC Juleis.png" alt="Simplejuleies" draggable="false">
+                    <div class="label">
+                        <div class="name">Simplejuleies</div>
+                        <div class="liga">Duo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="BC Juleis.png" alt="BC Juleies" draggable="false">
+                        <div class="leader">
+                            Juleies
+                        </div>
+                        <div class="member">
+                            MistxrGG
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="HappyCraftHD.png" alt="HappyCraftHD" draggable="false">
+                    <div class="label">
+                        <div class="name">HappyCraftHD</div>
+                        <div class="liga">Duo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="HappyCraftHD.png" alt="HappyCraftHD" draggable="false">
+                        <div class="leader">
+                            S_Kicker
+                        </div>
+                        <div class="member">
+                            BenRexy
+                        </div>
+                        <div class="sec-member">
+                            Mondkornett0049, Maxsiva25
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="FCN-Community.png" alt="FCN-Community" draggable="false">
+                    <div class="label">
+                        <div class="name">FCN-Community</div>
+                        <div class="liga">Duo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="FCN-Community.png" alt="FCN-Community" draggable="false">
+                        <div class="leader">
+                            Lutiiiii
+                        </div>
+                        <div class="member">
+                            pinopeltzi
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="DieModerneFC.png" alt="DieModerneFC" draggable="false">
+                    <div class="label">
+                        <div class="name">DieModerneFC</div>
+                        <div class="liga">Duo</div>
+                        <div class="ligastars">☆☆☆☆☆</div>
+                    </div>
+                    <div class="member-list">
+                        <img src="DieModerneFC.png" alt="DieModerneFC" draggable="false">
+                        <div class="leader">
+                            NilowitschYT
+                        </div>
+                        <div class="member">
+                            isdelo73
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const categories = document.querySelector('.categories');
+
+        categories.addEventListener('click', event => {
+            const clickedItem = event.target.closest('.item');
+            if (clickedItem) {
+                const memberList = clickedItem.querySelector('.member-list');
+                const allItems = document.querySelectorAll('.item');
+
+                allItems.forEach(item => {
+                    if (item !== clickedItem) {
+                        item.classList.remove('flip');
+                    }
+                });
+
+                clickedItem.classList.toggle('flip');
+
+                if (memberList) {
+                    event.stopPropagation(); // Prevent event propagation to the container
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

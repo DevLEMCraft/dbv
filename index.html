@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DBV</title>
+  <style>
+    * {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #333;
+      background-image: url('bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container {
+      text-align: center;
+      position: relative;
+      background-color: transparent;
+    }
+
+    img {
+      width: 180px;
+      height: 180px;
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 180px;
+      height: 190px;
+      opacity: 0.92;
+      background-color: #333;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(255, 255, 0, 0.8);
+      z-index: 1;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+
+    }
+
+    .icon:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      width: 190px;
+      height: 200px;
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .button {
+      position: absolute;
+      width: 100px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      text-align: center;
+      line-height: 100px;
+      cursor: pointer;
+      text-decoration: solid;
+      box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+      opacity: 0;
+      font-weight: bold;
+      transform: translate(-50%, -50%) translate(50px);
+      transition: transform 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      transform: translate(-50%, -50%) scale(1.05);
+      width: 110px;
+      height: 110px;
+    }
+
+    .button.visible {
+      opacity: 1;
+    }
+
+    #twitch {
+      box-shadow: 0 0 20px rgba(234, 0, 255, 0.8);
+    }
+
+    #discord {
+      box-shadow: 0 0 20px rgba(0, 89, 255, 0.8);
+    }
+
+    #instagram {
+      box-shadow: 0 0 20px rgba(255, 0, 242, 0.8);
+    }
+
+    #tiktok {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+
+    #youtube {
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+    }
+
+    .dbv-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 460px;
+      font-weight: bold;
+      font-family: 'Arial Rounded WT Bold', sans-serif;
+      color: #FF0;
+      opacity: 0.5;
+      z-index: -50;
+    }
+
+    #teams {
+      box-shadow: 0 0 20px rgba(219, 103, 36, 0.8);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="icon" onclick="toggleButtons()">
+      <img src="DBV.png" alt="Icon">
+    </div>
+    <div class="buttons">
+      <a href="https://twitch.tv/mc_dbv" class="button" id="twitch">Twitch</a>
+      <a href="https://discord.gg/wKc4AKFB7" class="button" id="discord">Discord</a>
+      <a href="https://youtube.com/@mc_dbv" class="button" id="youtube">YouTube</a>
+      <a href="https://instagram.com/mc_dbv" class="button" id="instagram">Instagram</a>
+      <a href="https://tiktok.com/@mc_dbv" class="button" id="tiktok">TikTok</a>
+      <a href="./teams" class="button" id="teams">Teams</a>
+    </div>
+    <div class="dbv-text">DBV</div>
+  </div>
+  <script>
+    const icon = document.querySelector('.icon');
+    const buttons = document.querySelectorAll('.button');
+    const buttonPositions = [
+      { angle: 10, distance: 260 },
+      { angle: 72, distance: 260 },
+      { angle: 144, distance: 260 },
+      { angle: 206, distance: 260 },
+      { angle: 268, distance: 260 },
+      { angle: 320, distance: 260 }
+    ];
+    let buttonsVisible = false;
+
+    function toggleButtons() {
+      if (buttonsVisible) {
+        hideButtons();
+      } else {
+        showButtons();
+      }
+      buttonsVisible = !buttonsVisible;
+    }
+
+    function hideButtons() {
+      icon.classList.remove('clicked');
+      buttons.forEach(button => {
+        button.style.opacity = '0';
+        button.style.transform = 'translate(-50%, -50%) translate(50px)';
+      });
+    }
+
+    function showButtons() {
+      icon.classList.add('clicked');
+      buttons.forEach((button, index) => {
+        button.style.opacity = '1';
+        button.style.transform = `translate(-50%, -50%) translate(${calculateX(index)}px, ${calculateY(index)}px)`;
+      });
+    }
+
+    function calculateX(index) {
+      const radians = (buttonPositions[index].angle - 90) * (Math.PI / 180);
+      return buttonPositions[index].distance * Math.cos(radians);
+    }
+
+    function calculateY(index) {
+      const radians = (buttonPositions[index].angle - 90) * (Math.PI / 180);
+      return buttonPositions[index].distance * Math.sin(radians);
+    }
+  </script>
+</body>
+
+</html>
